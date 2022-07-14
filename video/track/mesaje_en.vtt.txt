@@ -1,0 +1,7 @@
+WEBVTT
+
+00:00.000 --> 00:03.000
+Un <b>Hello</b>.
+
+00:03.000 --> 00:07.000
+Un alt exemplu de mesaj <i>vtt</i>. 

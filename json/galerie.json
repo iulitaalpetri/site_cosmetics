@@ -1,0 +1,89 @@
+{
+	"cale_galerie":"Resurse/imagini/galerie",
+	"imagini": [
+		
+		{
+			"fisier":"Extract ulei esential.jpg",
+			"titlu":"Ulei esential",
+			"descriere": "Realizat din produse naturale, uleiul esential este benefic pentru diverse probleme ale tenului.", 
+			"anotimp": "iarna"
+
+
+		},
+		{
+			"fisier":"Jade-roller.jpg",
+			"titlu":"Jade-roller",
+			"descriere":"Realizat din jad natural, rola faciala ofera relaxare si fermitate tenului.",
+			"anotimp": "iarna"
+		},
+		{
+			"fisier":"serum.jpg",
+			"titlu":"Serum",
+			"descriere":"Serumul poate fi folosit atat ca baza de machiaj, cat si pentru un plus de hidratare inainte de aplicarea cremei.",
+			"anotimp":"iarna"
+		},
+		
+		
+		{
+			"fisier":"Produse baie.jpg",
+			"titlu":"Produse pentru baie",
+			"descriere":"Gama noastra de produse pentru baie cuprinde sarea de baie, gel de dus, spuma de corp si laptele de baie.",
+			"anotimp":"iarna"
+
+		},
+		{
+			"fisier":"Unt de corp.jpg",
+			"titlu":"Unt de corp",
+			"descriere":"Este intens hidratant si ofera un aspect sanatos si stralucitor pielii.",
+			"anotimp":"iarna"
+		},
+		{
+			"fisier":"Produse.jpg",
+			"titlu":"Produse",
+			"descriere":"Gama de produse.",
+			"anotimp": "iarna"
+		},
+		{ "fisier": "p1.jpg",
+			"descriere": "un produs",
+			"anotimp":"iarna"
+			
+
+		},
+		
+		{
+			"fisier": "p2.jpg",
+			"descriere":"un produs",
+			"anotimp": "iarna"
+		},
+		{
+			"fisier": "p3.jpg",
+			"descriere": "un produs",
+			"anotimp": "iarna"
+		},
+		{
+			"fisier": "p4.jpg",
+			"descriere": "un produs",
+			"anotimp": "iarna"
+		}, 
+		{
+			"fisier": "p5.jpg",
+			"descriere": "un produs",
+			"anotimp": "iarna"
+		},
+		{
+			"fisier": "p6.jpg",
+			"descriere": "un produs",
+			"anotimp":"iarna"
+
+		}
+		,
+		{
+			"fisier":"Crema de maini.jpg",
+			"titlu":"Crema de maini",
+			"descriere":"Este perfecta pentru sezonul rece.",
+			"anotimp":"iarna"
+		}
+
+
+	]
+}
