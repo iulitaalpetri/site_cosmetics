@@ -1,0 +1,48 @@
+{
+  "name": "iulit",
+  "version": "1.0.0",
+  "description": "site cosmetice",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "cosmetice",
+    "creme",
+    "gel",
+    "ten",
+    "acnee",
+    "serum"
+  ],
+  "author": "Alpetri Iulita",
+  "license": "ISC",
+  "engines": {
+    "node": "16.x"
+  },
+  "dependencies": {
+    "assert": "^2.0.0",
+    "body-parser": "^1.20.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "express-session": "^1.17.2",
+    "formidable": "^2.0.1",
+    "helmet": "^5.1.0",
+    "html-pdf-node": "^1.0.8",
+    "js": "^0.1.0",
+    "juice": "^8.0.0",
+    "mongodb": "^4.6.0",
+    "nodemailer": "^6.7.3",
+    "pg": "^8.7.3",
+    "qrcode": "^1.5.0",
+    "request": "^2.88.2",
+    "sass": "^1.49.9",
+    "sharp": "^0.30.3",
+    "socket.io": "^4.5.1",
+    "xml-js": "^1.6.11"
+  },
+  "repository": {
+    "type": "git",
+    "url": "site"
+  }
+}
