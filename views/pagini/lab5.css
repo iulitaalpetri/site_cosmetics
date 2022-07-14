@@ -1,0 +1,13 @@
+#galerie_statica{
+    counter-reset: nrimag;
+}
+
+
+#galerie_statica figcaption{
+    counter-increment: nrimag 1; /* default e 1*/
+
+}
+
+#galerie_statica figcaption::before{
+    content: counter(nrimag, lower-alpha) ". ";
+}

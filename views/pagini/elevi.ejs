@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html  lang="ro">
+    <head>
+        <meta name="description" content="Cofetaria Dulcelind ofera prajituri, torturi, produse de patiserie cu optiunea de achizitie online si livrare prin curier.">
+        <meta name="keywords" content="cofetarie, Dulcelind, prajituri, torturi, dulce, pateuri, produse">
+        
+        <link rel="stylesheet" href="/Resurse/css/produse.css" type="text/css" />
+        <link rel="stylesheet" href="/Resurse/css/elevi.css" type="text/css" />
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+       
+
+        <title>Cofetăria Dulcelind - home</title>
+        <%- include("../fragmente/head") %>     
+        <script type="text/javascript" src=/Resurse/js/produse.js></script>
+    </head>
+    <body id="grad">
+    <%- include("../fragmente/header") %>
+
+    <main>
+        <input type="password"></input>
+        <p  class="ceva" >123 </p >
+        <p  class="w" >456 </p >
+        <p id="w" class="ceva" > 789 </p >
+
+        <div id="elev">
+        <% let i=0;
+        for(let el of locals.elevi){i++;
+            
+            let str= el.note;
+            let lista= str.split(",");
+            %> 
+            <article id="articol" class="elev">
+            <h2><span class="val-nume"><%- el.nume%></span> <%- el.prenume%></h2>
+            <p><%- el.clasa %></p>
+            <ul>
+            <%  media=0;
+                contor=0;
+            
+            for (let sir of lista){ contor++;
+                media=media+ parseInt(sir);  
+                 %>
+
+                    <li><%- sir %></li>
+                <% } 
+                media= media/contor;%>
+            </ul> 
+            <p id="media" ><span class="val-media"><%- media %></span></p>
+            </article>
+
+
+            
+            
+            
+            
+            
+            
+            <%} %>
+        </div>
+        <label>ascendent
+			<input id="ascendent" checked name="gr_rad" value="ascendent" type="radio"/>
+		</label>
+		<label>descendent
+			<input id="descendent" name="gr_rad" value="descendent" type="radio"/>
+		</label>
+		<button id="sortare">sorteaza</button> 
+        <label>Selecteaza culoarea:
+            <select id="i_sel_simplu">
+                <option value="toate" selected id="sel-toate">toate</option>
+                <option value="rosu">rosu</option>
+                <option value="alb" >alb</option>
+                <option value="verde">verde</option>
+                <option value="galben">galben</option>
+                <option value="roz">roz</option>
+                <option value="albastru">albastru</option>
+                <option value="negru">negru</option>
+
+            </select>
+        </label>
+        <label> Nume: <input type="text" id="inp-nume"></label>
+
+        <button id="filtrare">filtreaza</button> 
+    </main>
+
+    <%- include("../fragmente/footer") %>
+    </body>
+</html>

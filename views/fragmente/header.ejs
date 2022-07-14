@@ -1,0 +1,106 @@
+
+<script>
+ var tema = localStorage.getItem("tema");
+        console.log(tema);
+        if(tema){
+            if(tema == "dark"){
+                document.documentElement.classList.add("dark");
+                if(!document.getElementById("btn_tema").classList.contains("fa-moon")){
+                    document.getElementById("btn_tema").classList.add("fa-moon");
+                    document.getElementById("btn_tema").classList.remove("fa-sun");
+                    document.getElementById("btn_tema").classList.remove("fa-heart");
+                }
+            }else{
+                document.documentElement.classList.remove("dark");
+                document.documentElement.classList.add("heart");
+                if(!document.getElementById("btn_tema").classList.contains("fa-heart")){
+                    document.getElementById("btn_tema").classList.add("fa-heart");
+                    document.getElementById("btn_tema").classList.remove("fa-sun");
+                    document.getElementById("btn_tema").classList.remove("fa-moon");
+                }
+            }
+        }
+        else{
+            document.documentElement.classList.remove("heart");
+            if(!document.getElementById("btn_tema").classList.contains("fa-sun")){
+                document.getElementById("btn_tema").classList.add("fa-sun");
+                document.getElementById("btn_tema").classList.remove("fa-moon");
+                document.getElementById("btn_tema").classList.remove("fa-heart");
+            }
+        }
+    // var tema= localStorage.getItem("tema");
+
+    // document.getElementById("btn_tema").onclick= function(){
+    //     document.body.classList.toggle("dark");
+    // }
+    // if(tema)
+    // document.body.classList.add("dark");
+    // else document.body.classList.remove("dark");
+</script>
+<header> 
+        
+    <i class="fa-solid fa-house"></i>
+    <div id="tit">
+        <title id="titlu"> Magazin 
+              cosmetice </title>
+        </div>
+        <i onclick="schimbare_buton(this)" id="btn_tema" class="fa-solid fa-sun fa-xl"></i> 
+        <br></br>
+
+    
+    <nav class="navigare">
+        <label id="hamburger" for="ch-menu" media="(max-width: 500px)">
+            <img src="./Resurse/imagini/ham.jpg" alt="menu" media="(max-width: 500px)">
+        </label>
+
+        <input id="ch-menu" type="checkbox" media="(max-width: 500px)"> 
+
+        
+
+
+
+
+
+        
+        <ul class="meniu">
+            
+            <li><a  href="#" id="casuta"><span id="icon" ><i class="fa fa-home"></i></span><span id="textmeniu">Meniu</span></a></li>
+            
+            <li><a href="/">Acasa</a></li>
+
+            <li><a href="/despre">Despre</a></li>
+            
+            <li ><div>Produse
+            </div>
+                <ul class="submeniu2"> 
+                    <li><a href="/produse">Toate</a></li>
+                    <li><a href="/produse?tip=hidratant">Hidratant</a></li>
+                    <li><a href="/produse?tip=curatare">Curatare</a></li>
+                </ul>
+            </li>
+            
+            
+            <li><a href="/galerie">Galerie</a></li>
+            <li> <a href="/inregistrare">Inregistrare</a></li>
+            <li> <a href="/cos-virtual">Cos virtual</a></li>
+            <% if(locals.utilizator && locals.utilizator.rol== "admin") { %>
+                <li> <a href="/useri">Useri</a> </li>
+                <% } %>
+
+            <li><a href="/contact">Contact</a></li>
+            <% if (locals.utilizator){ %>
+                <li><div> <%- locals.utilizator.username %></div>
+                <ul>
+                    <li><a href="/profil">Profil</a></li>
+                    <li> <a href="/logout">Logout</a></li>
+                </ul>
+                </li>
+                <% } %>
+        </ul>
+    </nav>
+    <br>
+    <br>    
+    <p>        </p>
+
+
+</header>

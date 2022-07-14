@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html  lang="ro">
+    <head>
+        <meta name="description" content="Despre cosmetivce">
+        <meta name="keywords" content="ten, crema">
+        <title>Despre magazin</title>
+        <%- include("../fragmente/head.ejs");  %> 
+
+        <!--
+        <link rel="stylesheet" href="/resurse/css/general.css" type="text/css"/>
+        <link rel="stylesheet" href="/resurse/css/nav.css" type="text/css"/>
+        <link rel="stylesheet" href="/resurse/css/galerie-statica.css" type="text/css"/>
+        <link rel="stylesheet" href="/resurse/css/nav-500.css" type="text/css" media="screen and (max-width:650px)"/>
+        <link rel="stylesheet" href="/resurse/css/general-1200.css" type="text/css" media="screen and (max-width:1200px)"/>
+		<link rel="stylesheet" href="/resurse/css/general-500.css" type="text/css" media="screen and (max-width:500px)"/>
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet"> 
+-->
+        
+        <style>
+/*
+            body{
+                --inalt-meniu:2rem;
+            }
+            nav{
+                height:var(--inalt-meniu);
+                width:100%;
+                background-color: aqua;
+                position:fixed;
+                top:0;
+                left:0;
+                z-index: 2;
+
+            }
+            nav ul, nav li, nav a,nav{
+                padding:0;
+                margin:0;
+            }
+            ul.meniu li{          
+            box-sizing: border-box;
+            width:120px;
+            text-align: center;
+            list-style-type: none;
+            height:var(--inalt-meniu);
+            float:left;
+            }
+            ul.meniu ul{
+                display:none;
+            } 
+            ul.meniu>li>div{
+                z-index: 2;
+                position: relative;
+            }
+            ul.meniu>li>ul{
+                z-index: 1;
+                position: relative;
+            }
+            ul.meniu li:hover ul{
+                display: block;
+                
+                position: relative;
+                transform-origin: 0 0;
+                animation-name: subm;
+                animation-timing-function: linear;
+                animation-duration: 1s;
+                animation-fill-mode: forwards;
+                animation-iteration-count: 1;
+            }
+            ul.meniu li:hover>a,ul.meniu li:hover>div{
+                background-color:cadetblue;
+            }
+            ul.meniu li a{
+                
+                
+                display:block;
+            }
+            ul.meniu li a, ul.meniu li div{
+                cursor:pointer;
+                background-color: aqua;
+                width:100%;
+                height:100%;
+                transition:all 1s linear;
+                box-sizing: border-box;
+                outline:1px solid black;  
+                text-decoration: none;
+                color: black;
+                font-weight: bold;
+                padding:5px;
+            }
+
+            #hamburger{
+                display:none;
+            }
+            #ch-menu{
+                display:none;
+            }
+            h1{
+                padding-top:100px;
+            }
+            @keyframes subm{
+                0%{
+                    opacity: 0;
+                    transform:scale(0,0);
+                }
+                100%{
+                    opacity: 1;
+                    
+                    transform:scale(1,1);
+                }
+            }
+*/
+        </style>
+
+    </head>
+    <body id="grad">
+        
+    <%- include("../fragmente/header.ejs");  %> 
+<article class="container">
+    <main>
+        <div id = "grid-pagina-despre">
+            <section id="p1">
+                <img src="./Resurse/imagini/galerie/serum.jpg" alt="Imagine fata colorata" title="crema maini " width="250px" height="170px" />
+            </section>
+            <section id="t1">
+                <h2>Unde a inceput totul?</h2>
+                <p>Din iubire pentru frumusete si sanatate, am fondat Magazinul de cosmetice in 2008, avand la baza interesul pentru calitate si produse curate. </p>
+            </section>
+            <section id="p2">
+                
+                        <img src="./Resurse/imagini/galerie/p2.jpg" alt="Imagine fata colorata" title="imag " width="250px" height="170px" />
+
+                    
+            </section>
+            <section id="t2">
+                <h2>Ce ne diferentiaza?</h2>
+                <p>Intr-o lume in care totul e artificial, brand-ul nostru pastreaza toate produsele curate, folosind ingrediente de origine 100% naturale, procurate din surse de incredere.
+                </p>
+            </section>
+            <section id="p3">
+                <img src="./Resurse/imagini/galerie/p3.jpg" alt="Imagine fata colorata" title="imag " width="250px" height="170px" />
+
+            </section>
+            <section id="t3">
+                <h2>De la patron</h2>
+                <p>Din pasiune pentru produse de infrumusetare, incercam sa inovam din ce in ce mai mult pentru a oferi satisfactie clientilor nostri.</p>
+            </section>
+        </div>
+    </main>
+</article>
+    <%- include("../fragmente/footer.ejs");  %> 
+
+
+    </body>
+</html>

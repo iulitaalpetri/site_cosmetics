@@ -1,0 +1,297 @@
+﻿<!DOCTYPE html>
+<html lang="ro">
+   
+    <head>
+   
+        
+
+        <meta name="description" content="Magazinul nostru furnizeaza o gama variata de produse cosmetice cu ingrediente de origine naturala, corespunzatoare diferiteleor tipuri de piele ">
+
+        <meta name="keywords" content="cosmetice, creme, geluri, serum">
+
+        <%- include("../fragmente/head.ejs");  %> 
+        
+        
+        
+
+        
+    
+    
+    </head>
+    
+<body id="grad">
+    
+    
+    
+    
+    <%- include("../fragmente/header.ejs");  %>  
+    
+
+    <main > 
+        
+       
+
+        <div id="grid-pagina">
+        <section id="welcome">
+        <section >
+            <h2> De ce alegi compania X?</h2>
+            <p  >Cu o vechime de peste y ani, compania noastra ofera prin intermediul produselor noastre satisfactie clientilor si <br> rezultate sigure cand vine vorba de sanatatea pielii.  <br> </p>
+            <p> <%- locals.ip %></p>
+            <% if(!locals.utilizator ){%>
+            <form id="form_inreg"  method="post" class="date"  action="/login"  enctype="multipart/form-data">
+                
+                <p>
+                    <label>
+                        Username: <input type="text" name="username" id="inp-username" value="" required pattern="[A-Za-z0-9]+">
+                    </label>
+                </p>
+                <p>
+                    
+                <p>
+                    <label>
+                        Parola: <input id="parl" type="password" required  name="parola" value="">
+                    </label>
+                </p>
+                
+               <p><input type="submit" value="logare"></input></p> 
+             </form>
+             <% } %> 
+             <%- locals.mesajLogin %>
+            <!-- useri -->
+
+             <section id="fig1" class="fg-img">
+                <h2>Useri online:</h2>
+                <ul>
+                    <% for(let u of locals.useriOnline) {  %>
+                        <li><%- u.username %>(<%- u.nume %>)</li>
+                    <% }  %>
+                </ul>
+            </section>
+            <!-- ------ -->
+
+            
+
+            
+
+
+                
+            <h2>Galerie animata</h2>
+            <section id="sectiunegalerieanimata">
+            <div id="galerie-animata" class="galerie">   
+                <% k= 0;
+                for (let imag of locals.imagini){ k++; %>
+                    <figure>
+                        <picture>
+                            <source srcset="<%- imag.mic%>" media="(max-width:800px)" />
+                            <source srcset="<%- imag.mediu%>" media="(max-width:1200px)" />
+                            <img src="<%- imag.mare %>" alt="text alternativ" />
+                        </picture>
+                       
+                    </figure>
+                <% } %>
+                
+            </div> </section>
+        </section>
+        <section >
+        <video controls poster="/Resurse/imagini/galerie/serum.jpg" id="vtt" preload="auto" >
+            <source src="/Resurse/video/vid.mp4" type="video/mp4">
+            <source src="/Resurse/video/vidogv.ogv" type="video/ogv">
+            <track default src="/Resurse/video/track/mesaje_ro.vtt.txt" kind="captions" srclang="ro" label="romana" />
+            <track  src="/Resurse/video/track/mesaje_en.vtt.txt" kind="captions" srclang="en" label="engleza" />
+        </video>
+    </section>
+       
+    
+        <article  >
+            <h2>Promotii</h2>
+            <h3>In perioada 15- 20 saptembrie, avem reduceri de pana la 50% la produsele de tipul:</h3>
+            <nav>
+                <ul> 
+                    <li>Produse cu acid hialuronic</li>
+                    <li>Geluri de dus</li>
+                    <li> etc</li>
+                </ul>
+            </nav>
+            <p> <strong>Atenție!</strong> La prima achizitie de pe site, cumparatorul primeste <b>20%</b> reducere la un articol la alegere. </p>
+            <h2>Apasa <a href="gamaacid.html">aici</a> si cumpara acum noua gama antirid, imbogatita cu <b>acid hialuronic</b> si <i>aloe barbadensis miller</i> (aloe vera) pentru tenul sensibil.</h2>
+            <p>Conform studiilor , acidul hialuronic este cel mai eficient ingredient pt combaterea si prevenirea semnelor imbatranirii si a ridurilor. Mai multe detalii gasiti la <a href="https://doc.ro/anti-aging/totul-despre-acidul-hialuronic" target="_blank">aceasta adresa</a></p>
+        </article>
+    
+</section >
+<section id="orar">
+    <h1>Titlu</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</section>
+        <section id="tabel" >
+            <h2>Puteti achizitiona produsele si la sediul din Bucuresti, conform urmatorului program</h2>
+            <ul>
+                <table id="table" style="width:50%">
+                    <thead>
+                        <tr>
+                            <td>Zi</td>
+                            <td>Inetrval orar</td>
+                            
+                          </tr>
+                    </thead>
+                    <tbody>
+                    
+                    <tr>
+                      <td>Luni</td>
+                      <td>11.00- 18.00</td>
+                      
+                    </tr>
+                    <tr>
+                      <td>Marti</td>
+                      <td>9.00- 18.00</td>
+                      
+                    </tr>
+                    <tr>
+                        <td>Miercuri</td>
+                        <td>9.00- 18.00</td>
+                        
+                      </tr>
+                    <tr>
+                        <td>Joi</td>
+                        <td>9.00- 18.00</td>
+                        
+                    </tr>  
+                    <tr>
+                        <td>Vineri</td>
+                        <td>9.00- 16.00</td>
+                        
+                      </tr>
+                    <tr>
+                        <td>Sambata</td>
+                        <td>Inchis</td>
+                        
+                    </tr>  
+                    <tr>
+                        <td>Duminica</td>
+                        <td>Inchis</td>
+                        
+                    </tr>
+                </tbody>
+
+                <tfoot>
+                    <tr colspan="2">Nu se includ sarbatorile</tr>
+                </tfoot>
+                <caption id="caption">Orar</caption>
+                </table>
+                
+            </ul>
+        </section>
+        <section id="produse">   
+        <section id="figure">
+        <figure  >
+            <picture>
+                <source srcset="./Resurse/imagini/cremamica.jpg" media="(max-width: 700px)">
+                <source srcset="./Resurse/imagini/cremamedie.jpg" media="(max-width: 1000px)">
+                <img src="./Resurse/imagini/crema.jpg" alt="Imagine fata colorata" title="crema maini " />
+            </picture>
+            <figcaption>Crema de maini neutrogena</figcaption>
+        </figure>
+    </section></section>  
+        <section id="fig1" class="celula">
+<h2  class = "titluri">Calendar</h2>
+                <div id="calendar">
+                    <div>L</div>
+                    <div>Ma</div>
+                    <div>Mi</div>
+                    <div>J</div>
+                    <div>V</div>
+                    <div>S</div>
+                    <div>D</div>
+                <% 
+                nrZile=[31,28,31,30,31,30,31,31,30,31,30,31];
+                
+                d=new Date(); //observatie: este data serverului nu a clinetului; codul ejs fiind compilat pe server
+                anCurent=d.getFullYear();
+                lunaCurenta=d.getMonth();
+                if(anCurent%400==0 || (anCurent%4==0 && anCurent%100!=0)) nrZile=29;
+                let nrZileCalendar=nrZile[lunaCurenta]
+                primaZiLuna=new Date(anCurent, lunaCurenta, 1);
+                ultimaZiLuna=new Date(anCurent, lunaCurenta, nrZileCalendar);
+                ziSaptPrimaZiLuna=(primaZiLuna.getDay()-1+7)%7;
+                ziSaptUltimaZiLuna=(ultimaZiLuna.getDay()-1+7)%7;
+                for (let i=0;i<ziSaptPrimaZiLuna;i++){
+                 %>
+                 <div></div> 
+                 <% } 
+
+                 
+                 for (let i=1;i<=nrZileCalendar;i++){
+                    var obiectEvenimente=null;
+                        if(locals.evenimente)
+                             obiectEvenimente=locals.evenimente.find(function(elem){ return elem.data.valueOf()==new Date(anCurent,lunaCurenta,i).valueOf()})
+                     if(obiectEvenimente)
+                     {
+                     %>
+                     <div class="zi eveniment" title="<%= obiectEvenimente.text %>"><%= i %></div> 
+                     <%
+                     }
+                     else{
+                    %>
+                    <div class="zi"><%= i %></div> 
+                    <% } 
+                } %>
+                </div>
+        </section>
+        
+        <section id="anunturi">
+            <p>Pentru rezultate eficiente, vizionati urmatoarele rutine de ingrijire:</p>
+        <div class="ifra" >
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/IZoJCw_r0oc" title="YouTube video player" name="ifr" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="taburi">
+        <a class="zona6" href="https://www.youtube.com/embed/IZoJCw_r0oc" target="ifr">Vid1</a>
+        <a class="zona6" href= "https://www.youtube.com/embed/ilTgzCEjSMg" target="ifr">Vid2</a>
+            </div>
+
+        
+        </div></section>
+        <section id="fig2">
+            <p>Descarca imaginea</p>
+            <a href="./Resurse/imagini/download.jpg" download="crema">
+                <img src="./Resurse/imagini/download.jpg" alt="O crema de noapte." height="200" width="200">
+
+
+        </section>
+        <section id="index-intrebari">
+            <h3>Intrebari frecvente</h3>
+            <ul>
+                <li>
+                    <details>
+                        <summary>Sunt ingrediente naturale?</summary>
+                        <p>Produsele noastre contin ingrediente de origine 100% naturale</p>
+                    </details>
+                </li>  
+                <li>
+                    <details>
+                        <summary>Cum pot testa produsele?</summary>
+                        <p>Produsele noastre pot fi testate in sediile magazinelor noastre.</p>
+                    </details>
+                </li>    
+                <li>
+                    <details>
+                        <summary>Daca nu imi place un produs, poate fi returnat?</summary>
+                        <p>Doar in cazul in care nu a fost deschis ambalajul. Puteti consulta de asemenea <b>politica de returnare</b> <a href="#politicaretuernare.html">aici</a></p>
+                    </details>
+                </li>     
+            </ul>
+        </section>
+            
+
+        </div>
+           
+        
+        
+
+
+        
+        
+
+    </main>
+    <%- include("../fragmente/footer.ejs");  %> 
+
+
+</body>
+</html>

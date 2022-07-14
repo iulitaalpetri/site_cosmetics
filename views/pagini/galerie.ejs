@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="ro">
+   
+    <head>
+   
+        
+        <title id="titlu"> Magazin cosmetice </title>
+        
+        <meta name="description" content="Magazinul nostru furnizeaza o gama variata de produse cosmetice cu ingrediente de origine naturala, corespunzatoare diferiteleor tipuri de piele ">
+
+        <meta name="keywords" content="cosmetice, creme, geluri, serum">
+
+        <%- include("../fragmente/head.ejs");  %> 
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/Resurse/css/curs5.css" type="text/css"/>
+        <link rel="stylesheet" href="/Resurse/css/print.css" type="text/css" /> 
+        
+        <link rel="stylesheet" href="/Resurse/css/galerie-animata.css" type="text/css"/>
+        
+
+        <link rel="stylesheet" href="/Resurse/css/galerie-statica.css" type="text/css"/>
+        
+
+        
+    
+    
+    </head>
+    
+<body id="grad">
+    
+    <%- include("../fragmente/header.ejs");  %> 
+    <main>
+        <article class="container">
+        <div id="galerie_statica" class="galerie-a" > 
+                
+            <% let anotimp= "";
+            let anot="iarna"
+            d= new Date();
+            luna= d.getMonth();
+            if(luna < 2 || luna== 11) anotimp= "iarna";
+            else if (luna>=2 || luna < 5 ) anotimp="primavara";
+            else if (luna >= 5 || luna < 8 ) anotimp="vara";
+            else anotimp="toamna"; %> 
+            <%
+            k= 0;
+            for (let imag of locals.imagini){ k++; 
+                if(anot == imag.anotimp){
+                %>
+                <figure>
+                    <picture>
+                        <source srcset="<%- imag.mic%>" media="(max-width:800px)" />
+                        <source srcset="<%- imag.mediu%>" media="(max-width:1200px)" />
+                        <img src="<%- imag.mare %>" alt="text alternativ" />
+                    </picture>
+                    <figcaption><%- k %>. <%- imag.descriere %></figcaption>
+                </figure>
+            <%} } %>
+                   
+        </div>
+    </article> 
+    </main>
+    <%- include("../fragmente/footer.ejs");  %> 
+
+
+</body>
+</html>    

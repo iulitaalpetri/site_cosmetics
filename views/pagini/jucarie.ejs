@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html  lang="ro">
+    <head>
+        <meta name="description" content="Cofetaria Dulcelind ofera prajituri, torturi, produse de patiserie cu optiunea de achizitie online si livrare prin curier.">
+        <meta name="keywords" content="cofetarie, Dulcelind, prajituri, torturi, dulce, pateuri, produse">
+        
+        <link rel="stylesheet" href="/Resurse/css/produse.css" type="text/css" />
+        <link rel="stylesheet" href="/Resurse/css/jucarie.css" type="text/css" />
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+       
+
+        <title>jucarie</title>
+        <%- include("../fragmente/head") %>     
+        <script type="text/javascript" src=/Resurse/js/jucarie.js></script>
+    </head>
+    <body id="grad">
+    <%- include("../fragmente/header") %>
+
+    <main>
+        
+        <div id="jucarie">
+        <% 
+        for(let el of locals.jucarie){
+            
+            
+            %> 
+            <section class="sectiune_jucarie" >
+            <h2 class="jucarie"><span class="val-id"><%- el.id%></span>. <%- el.nume%></h2>
+            <p><span class="val-pret"><%- el.pret %></span></p>
+            <p><span class="val-varsta"><%- el.varsta_minima %></span></p>
+            <ol type="a">
+                
+            <%  
+            
+            for (let cul of el.culori){ 
+                 %>
+
+                    <li><%- cul %></li>
+                <% } 
+                %>
+            </ol> 
+            <% if(el.varsta_minima> 2) {%>
+                <p>nr disonibil de culori: <%- el.culori.length %>,  nerecomandata copiilor sub doi ani.</p>
+             <% } else { %> <p>nr disonibil de culori: <%- el.culori.length %>,potrivita copiilor intre 0 si 2 ani.   </p> <% } %>
+
+             <span class="val-culori"><%- el.culoare %></span>
+            </section>
+
+
+            
+            
+            
+            
+            
+            
+            <%} %>
+        </div>
+        <label>ascendent
+			<input id="ascendent" checked name="gr_rad" value="ascendent" type="radio"/>
+		</label>
+		<label>descendent
+			<input id="descendent" name="gr_rad" value="descendent" type="radio"/>
+		</label>
+		<button id="sortare">sorteaza</button> 
+        <label>Selecteaza culoarea:
+            <select id="i_sel_simplu">
+                <option value="toate" selected id="sel-toate">toate</option>
+                <option value="rosu">rosu</option>
+                <option value="alb" >alb</option>
+                <option value="verde">verde</option>
+                <option value="galben">galben</option>
+                <option value="roz">roz</option>
+                <option value="albastru">albastru</option>
+                <option value="negru">negru</option>
+
+            </select>
+        </label>
+
+        <button id="filtrare">filtreaza</button> 
+    </main>
+
+    <%- include("../fragmente/footer") %>
+    </body>
+</html>

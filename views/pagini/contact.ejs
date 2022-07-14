@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Magazin cosmetice - Contact</title>
+		<%- include("../fragmente/head") %>
+		<link rel="stylesheet" type="text/css" href="/Resurse/css/contact.css" />
+	</head>
+	<body class="container" id="grad">
+		<header>
+			<%- include("../fragmente/header") %>
+		</header>
+		<main>
+			<article class="container"> 
+			<h1>Trimite-ne un mesaj!</h1>
+			<p>Parerea ta conteaza pentru a spori satisfactia clientilor!</p>
+
+            <form method="post" action="/contact">
+                <label>Mesajul tau:<br/>
+                    <textarea cols="100" rows="8" name="mesaj" placeholder="Tell us what you think!"></textarea>
+                </label><br/>
+                <input type="submit" value="Send message">
+            </form>
+			<section>
+				<h2>Mesaje:</h2>
+				<% if (locals.mesaje) {
+					var mesajeSort=locals.mesaje.sort(function(a,b) {return (new Date(b.attributes.data)).getTime()-(new Date(a.attributes.data)).getTime()})
+					for (let msg of mesajeSort) { 
+						let dt=new Date(msg.attributes.data);
+						%>
+						<article class="mesaj-c">
+							<h3><span class="username"><%= msg.attributes.username%></span> told us:</h3>
+							<p><%= msg.elements[0].text %></p>
+							<p><small><time datetime="<%= dt.getUTCDate() %>"><%= dt.toLocaleString('ro-RO', {
+														weekday: 'long', 
+														day: 'numeric',
+														year: 'numeric', 
+														month: 'long', 
+														hour: 'numeric',
+														minute: 'numeric', 
+														second: 'numeric',
+													}) %></time></small>
+							</p>
+						</article>
+					<% } %>
+				<% } %>
+			</section>
+        </article>
+		</main>
+		
+		<%- include("../fragmente/footer") %>
+		
+	</body>
+</html>

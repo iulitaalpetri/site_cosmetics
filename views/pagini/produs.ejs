@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html  lang="ro">
+    <head>
+        <meta name="description" content="Cofetaria Dulcelind ofera prajituri, torturi, produse de patiserie cu optiunea de achizitie online si livrare prin curier.">
+        <meta name="keywords" content="cofetarie, Dulcelind, prajituri, torturi, dulce, pateuri, produse">
+        
+        <title>Cofetăria Dulcelind - home</title>
+        <%- include("../fragmente/head") %>     
+        <link href="/Resurse/css/produs.css" type="text/css" rel="stylesheet" />
+    </head>
+    <body id="grad">
+    <%- include("../fragmente/header") %>
+
+    <main>
+        <section>
+            <h2>Pagină produs</h2>
+                <article id="art-produs" >
+                    <h3><span class="nume"><%- locals.prod.nume %></span></h3>
+                   <section class="coloane">
+                    <section class="col">
+                        <div class="imagine">
+                            <figure>
+                                <a href="/produs/<%-prod.id %>" ><img src="/Resurse/imagini/produse/<%- prod.imagine %>" style="width:80%;height:auto;" alt="[imagine <%- prod.nume %>]" /></a>
+                            </figure>
+                        </div>
+                            <ul class="info-prod">
+                                <li class="pret">Pret: <span class="val-pret"><%- prod.pret%></span></li>
+                                <li class="stoc">Produse in stoc: <span class="val-nr_bucati"><%- prod.nr_bucati%></span></li>
+                                <li class="cantitate">Cantitate: <span class="val-cantitate"><%- prod.cantitate%> ml</span></li>
+                            </ul>
+                    </section>
+                    <section class="col">
+                        <p>Descriere: <span class="descriere"><%- locals.prod.descriere %> </span></p>
+                        <p>Ingrediente: <span class="ingrediente"><%- locals.prod.ingrediente %> </span></p>
+                    </section>
+                </section>
+                   
+                   
+                    <p>Bucati in stoc: <span class="stoc"><%- locals.prod.nr_bucati %> buc.</span></p>
+                    <p>Categorie: <span class="categorie"><%- locals.prod.tip_produs %> </span></p>
+
+                    
+                    <p>Ingredient dominant: <span class="dominant"><%- locals.prod.ingredient_dominant %> </span></p>
+                    <p>Data adăugare: <span class="categorie"><%- locals.prod.data_adaugare %> </span></p>
+                        
+                </article>
+            
+        </section>
+    </main>
+
+    <%- include("../fragmente/footer") %>
+    </body>
+</html>
