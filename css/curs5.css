@@ -1,0 +1,288 @@
+
+
+/* galerie animata*/
+*{
+    margin:0;
+    padding:0;
+    }
+    
+    body{
+        padding:3rem;
+    }
+    #border{
+       /*display: none;*/
+    }
+    #sectiunegalerieanimata {
+        padding-left: var(--padding-intern);
+        /* variabila din css-ul general*/
+        padding-right: var(--padding-intern);
+      }
+      
+      .galerie {
+        width: 500px;
+        height: 500px;
+        border: 10px solid transparent;
+        border-image: url(/Resurse/imagini/border.png) 30 round;
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 5rem;
+      }
+      
+      .galerie figcaption {
+        position: absolute;
+        bottom: 0;
+        background: rgba(255, 255, 255, 0.7);
+        width: 100%;
+        text-align: center;
+      }
+      
+      .galerie figure {
+        position: relative;
+        width: 500px;
+        height: 500px;
+      }
+      
+      #galerie-animata figure {
+        position: absolute;
+        margin-top: 0;
+        margin-left: 0;
+        left: 0;
+        top: 0;
+        z-index: 0;
+        animation-name: gal_exemplu;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
+        animation-duration: 18s;
+        transform-origin: 0 50%;
+      }
+      
+      #galerie-animata:hover figure {
+        animation-play-state: paused;
+      }
+      
+      #galerie-animata figure:nth-of-type(6) {
+        animation-delay: 0s;
+      }
+      
+      #galerie-animata figure:nth-of-type(5) {
+        animation-delay: 3s;
+      }
+      
+      #galerie-animata figure:nth-of-type(4) {
+        animation-delay: 6s;
+      }
+      
+      #galerie-animata figure:nth-of-type(3) {
+        animation-delay: 9s;
+      }
+      
+      #galerie-animata figure:nth-of-type(2) {
+        animation-delay: 12s;
+      }
+      
+      #galerie-animata figure:nth-of-type(1) {
+        animation-delay: 15s;
+      }
+      
+      /*cum calculam timpii:
+      - avem 7 poze; vrem pentru fiecare un timp de afisare de 1.5 secunde si o trecere spre urmatoarea poza de 1.5 secunde
+      - rezulta 3 secunde pentru fiecare imagine
+      - 7imagini * 3secunde =21 secunde in total pentru animatie (animation-duration) si fiecare poza cu un delay = 3* numarul de ordine
+      - momentul in care trebuie ascunsa poza si pusa in spatele celorlalte (ca sa isi astepte randul pentru noua animatie:
+      il calculam cu formula  timp_afisare(normal+trecerea la urmatoarea poza)/timp_total*100 = 3/21*100 =  14.285714(aproximativ)
+      100%..... 21s
+      x%........3s
+      
+      - calculam 100-14.285714=85.714286 - la acest moment imaginea trebuie sa se vada in spatele imaginii care se afiseaza in mod curent (ca sa se vada si cat timp se realizeaza efectul de schimbare a imaginii
+      */
+      @keyframes gal_exemplu {
+        0% {
+          z-index: 10;
+          opacity: 1;
+        }
+        /*perioada 0-5% in care se afiseaza fara efect */
+        8.3333333333% {
+          transform: scaleY(1);
+          opacity: 1;
+        }
+        /*transformare inceput disparitie*/
+        12.5% {
+          transform: rotateZ(0deg) scaleY(0.1);
+          opacity: 1;
+        }
+        16.6665666667% {
+          z-index: 10;
+          opacity: 0;
+          transform: rotateZ(90deg) scaleY(0.1);
+        }
+        16.6666666667% {
+          z-index: -10;
+          transform: scaleY(1);
+        }
+        /* il ascund cat mai in spate sa nu vina peste imaginile care erau mai sus in html decat el*/
+        83.3332333333% {
+          opacity: 0;
+          z-index: -10;
+        }
+        83.3333333333% {
+          z-index: 0;
+        }
+        /*setez z-index la 0 ca sa revina la ordinea normala de afisare*/
+        100% {
+          opacity: 1;
+          z-index: 0;
+        }
+      }
+      @media screen and (max-width: 500px) {
+        #sectiunegalerieanimata {
+          display: none;
+        }
+      }
+      /* buton tema*/
+     
+      .fa-sun, .fa-moon, .fa-heart{
+        position: absolute;
+        top: 30px;
+        left: 10px;
+    }
+      /*----buton tema---*/
+      /* #btn_tema{
+        
+          background-color: #222;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          border: 4px solid #222;
+          box-shadow: inset 0px 16px #999, inset 0px 16px 1px 1px #999;
+          -moz-box-shadow: inset 0px 16px #999, inset 0px 16px 1px 1px #999;
+          transform: rotate(90deg);
+        
+      } */
+
+    /* galerie statica */
+
+    
+    #galerie_statica{
+        display:grid;
+        
+    
+        
+        grid-gap:10px;
+    }
+    #galerie_statica figure:nth-child(1){
+        grid-area: 1/1/2/2;
+    }
+    #galerie_statica figure:nth-child(2){
+        grid-area: 1/2/3/3;
+    }
+    #galerie_statica figure:nth-child(3){
+        grid-area: 1/3/4/4;
+    }
+    #galerie_statica figure:nth-child(4){
+        grid-area: 2/1/2/2;
+    }
+    #galerie_statica figure:nth-child(5){
+        grid-area: 2/3/2/3;
+    }
+    #galerie_statica figure:nth-child(6){
+        grid-area: 3/1/3/2;
+    }
+    #galerie_statica figure:nth-child(7){
+        grid-area: 3/2/3/3;
+    }
+    #galerie_statica figure:nth-child(8){
+        grid-area: 3/3/4/3;
+    }
+    #galerie_statica figure:nth-child(9){
+        grid-area: 4/1/5/2;
+    }
+    #galerie_statica figure:nth-child(10){
+        grid-area: 4/3/5/4;
+    }
+    #galerie_statica figure:nth-child(11){
+        grid-area: 5/1/6/2;
+    }
+    #galerie_statica figure:nth-child(12){
+        grid-area: 5/2/6/3;
+    }
+    #galerie_statica figure:nth-child(13){
+        grid-area: 5/3/6/4;
+    }
+    
+    #galerie_statica figcaption{
+        counter-increment: nrimag;
+    }
+    #galerie_statica figcaption::before{
+        content: counter(nrimag, lower-roman) ". ";
+    }
+    body{
+        counter-reset:nrimag;
+    }
+    
+    
+    
+    
+    #galerie_statica img{
+        width:100%;
+    }
+    #galerie_statica img:hover{
+        animation-name: galeriestatica;
+        animation-duration: 2s;
+        transition-timing-function: linear;
+        transition:all 2s liniar;    
+    }
+    @keyframes galeriestatica{
+        
+        0%{
+            border-radius: 0px;
+            opacity: 100%;
+            
+        }
+        50%{
+            border-radius: 7px; 
+            opacity: 75%;
+            
+        }
+        100%{
+            border-radius: 15px;
+            opacity: 50%;
+            transform: scale( 140%);
+    
+        }
+    }
+    @media screen and (max-width: 1200px){
+        #green{
+            display: none;
+        }
+        #galerie_statica{
+          display: grid;  
+          grid-template-columns: repeat(2, 1fr);
+          grid-gap: 10px;
+        }
+        /*#galerie_statica figure:nth-child(13){
+            grid-area: 3/2/4/3;
+        }*/
+        
+        #galerie_statica img{
+            width:100%;
+        }
+    
+        
+      }
+    
+      @media screen and (max-width: 800px){
+          #green{
+              display: none;
+          }
+        #galerie_statica{
+            display: flex;
+            flex-direction: column;
+        }
+        #galerie_statica img{
+            width:100%;
+        }
+    
+      }
+      
+    

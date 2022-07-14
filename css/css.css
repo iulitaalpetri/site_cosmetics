@@ -1,0 +1,438 @@
+#vtt{
+  width: 100%;
+  justify-content: center;
+}
+::cue {
+  background-color: rgb(142, 236, 142); /* For browsers that do not support gradients */
+  background-image: linear-gradient(rgb(39, 172, 6), rgb(6, 59, 8));
+  color: rgba(76, 175, 80, 0);;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+body {
+  --color1: black;
+  --color2: rgb(77, 114, 101);
+  --color3: rgb(126, 190, 126);
+  --color4: white;
+  --color5: rgb(116, 190, 116);
+}
+body.dark{
+  --color1: white;
+  --color2: black;
+  --color3: rgb(106, 130, 106);
+  --color4: black;
+  --color5: rgb(116, 190, 116);
+}
+body.heart{
+  --color1: white;
+  --color2: black;
+  --color3: rgb(211, 84, 169);
+  --color4: black;
+  --color5: rgb(188, 26, 139);
+}
+#caption{
+  caption-side: bottom;
+}
+
+
+
+.casuta{
+  font-size: 2.5em;
+  display: flex;
+  height: 200px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.ifra{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+
+}
+.taburi{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  
+   
+  
+  
+  
+  color: rgb(4, 41, 4);
+  border-radius: 3%;
+  
+  }
+.taburi a{
+  border: 5px double rgb(4, 41, 4); 
+  
+  display:flex;
+  width: 120px;
+  height: 70px;
+  text-align: center;
+  text-align-last: center;
+  flex-direction: column;
+  background-color: --k;
+  border-top-right-radius: 17%;
+  border-bottom-right-radius: 17%;
+  border-style: double;
+  border-left-style:hidden;
+  color: white;
+  text-shadow: 1px 1px 2px white, 0 0 25px green, 0 0 5px darkgreen;
+  transition-property: width;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+
+
+}
+.taburi a:hover{
+  width: 140px;
+  transition-property: width;
+  transition-duration: 0.5s;
+  transition-timing-function: linear;
+  transition-delay: 1s;
+  animation: culoaretab;
+  transition:all 1s liniar;
+  animation-duration: 1s;
+  background-color: white;
+
+}
+
+@keyframes culoaretab{
+  0%{
+    background-color: black;
+  }
+  50%{
+    background-color: white;
+  }
+  100%{
+    background-color: white;
+  }
+
+}
+
+
+
+
+
+
+
+
+body{
+  --inaltime-meniu:3rem;
+}
+article h2{
+  border-style: solid;
+  border-color: #144e02;
+}
+
+
+nav ul.meniu ul{
+  /*implicit submeniul e ascuns*/
+  display: none;
+  position:absolute;/* ca sa il scot din container pe alt layer, sa nu imi deplaseze continutul cand devine vizibil*/
+  width:100%;
+}
+nav.navigare{
+  
+  height:var(--inaltime-meniu);
+  width:100%;
+  top:0;
+  padding:0;
+  background: black;
+  z-index:10;
+  /*ca sa fie pozitionat normal in partea de sus a containerului, sub sigla, 
+  dar apoi cand dam scroll sa ramana fix pe ecran*/
+  position:sticky;
+}
+nav ul.meniu>li{
+  float:left;
+  width:100px;
+position:relative;/* pentru ca submeniul pozitionat relativ sa aiba ca referinta parintele li*/
+}
+
+
+nav ul, nav li{
+  padding:0;
+  margin:0;
+}
+nav ul.meniu li{
+  /*text centrat pe orizontala*/
+  text-align:center;
+
+  /*ascundem bullets*/
+  list-style-type: none;
+  background: black;
+  cursor:pointer;
+}
+
+nav ul.meniu li a, nav ul.meniu li div:not(.apare){
+  text-decoration: none;
+  color:white;
+  display: block;
+  font-weight:bold;
+  /*inaltimea butonului si inaltimea liniei de text sunt identice 
+  pentru a centra textul pe verticala in element
+   - merge doar daca textul are o singura linie*/
+  height:var(--inaltime-meniu);
+  line-height:var(--inaltime-meniu);
+  outline:1px solid white;
+}
+.apare{
+  color: black;
+}
+
+ul.meniu a:hover, ul.meniu div:hover:not(.apare){
+  
+  transition:all 1s liniar;
+  animation: culoare;
+  animation-duration: 1.5s;
+
+}
+@keyframes culoare{
+  0%{
+    color: #ffffff;
+
+  }
+  100%{
+    color: #87FF61;
+  }
+}
+
+
+
+
+ul.meniu a, ul.meniu div{
+ transition: background 700ms linear; 
+}
+/*deschidere submeniu*/
+nav ul.meniu>li:hover>ul{
+display:block;
+  animation-name: aparitie_meniu;
+  animation-iteration-count:1;
+  animation-duration:0.7s;
+  animation-direction:normal
+  
+  animation-timing-function:linear;
+  transform-origin: 50% 0;
+}
+
+.apare{
+  color:black
+  
+}
+.apare:hover{
+  color: white; 
+}
+
+
+
+@keyframes aparitie_meniu{
+  0%{
+      opacity: 0;
+      transform:scale(0,0);
+  }
+  50%{
+      transform:scale(1,1);
+  }
+  100%{
+      opacity: 1;
+      
+      transform:scale(1,1);
+  }
+}
+#textmeniu{
+  color: black;
+}
+#textmeniu:hover{
+  color: white;
+  transition:all 1s liniar;
+  animation-name: negru ;
+  animation: 1.2s ;
+}
+@keyframes negru {
+  0%{
+    color: black;
+  }
+  
+  100%{
+    color: white;
+  }
+}
+#hamburger{
+  display:none;
+}
+#ch-menu{
+  display:none;
+}
+
+/*body {
+  background:
+    linear-gradient(225deg, rgba(199, 25, 57, 1), transparent 70%),
+    linear-gradient(135deg, rgba(86, 199, 133, 1), transparent 70%),
+    linear-gradient(315deg, rgba(186, 179, 39, 1), transparent 70%);
+}*/
+#grad{
+  
+  height: 200px;
+  background-color: rgb(142, 236, 142); /* For browsers that do not support gradients */
+  background-image: linear-gradient(var(--color3), var(--color2));
+  
+}
+
+
+@media screen and (max-width: 1000px){
+  #textmeniu{
+    display:none;
+  }
+  
+}
+
+
+
+@media screen and (max-width: 500px){
+#hamburger{
+  display: block;
+  height: 3rem;
+}
+#ch-menu{
+  display: none ;
+}
+#hamburger img{
+  height:100%;
+  width:auto;
+}
+
+/* implicit meniul e ascuns*/
+ul.meniu{
+  display:none;
+  position: absolute;
+  width:100%;
+  height: 300px;
+}
+
+
+/*aici facem vizibil meniul cand faem click pe hamburger meniu*/
+#ch-menu:checked + ul.meniu {
+  display: block;
+  z-index: 5;
+  
+  
+
+
+  animation-name: text-wipe;
+  animation-direction: normal;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+@keyframes text-wipe {
+  0%{
+    position: relative;
+  mask-size: 100% 400% ;
+  -webkit-mask-size: 100% 400%;
+  -webkit-mask-position: 0% 100%;
+  mask-position: 0% 100%;
+  mask-image: linear-gradient(black, transparent) ;
+  -webkit-mask-image: linear-gradient( black, black 50%, transparent );
+  }
+  
+  100% {
+    -webkit-mask-position: 0% 0%;
+    mask-position: 0% 0%;
+  }
+}
+
+    
+
+
+
+@keyframes aparitie_meniu_p_btn{
+  0%{
+      transform:scale(0,0);
+  } 
+100%{
+    transform:scale(1,1);
+  }
+}
+/*optiunile se intind pe toata latimea containerului*/
+nav ul.meniu li{
+  width:100%;
+}
+
+
+/*meniul sa vina deasupra continutul de mai jos, fara sa impinga continutul*/
+nav ul.meniu>li ul{
+  position:absolute;
+  width:100%;
+  z-index:200;
+  transform:scale(1,1);
+}
+
+#ch-menu:checked+ul.meniu>li ul>*{
+  position:relative;
+  z-index:200;
+}
+nav ul.meniu>li:hover>ul{
+  
+  z-index:200;
+  transition:all 1s liniar;
+  animation-name:culoare;
+  animation-duration: 1s;
+}
+
+
+/* pentru fiecare element din submeniu generam un triunghiulet alb inaintea lui*/
+/*animatia cu verde*/
+nav ul.meniu>li li a:before{
+  content:" \25B7\00A0	";
+  color:white;
+
+}
+ul.meniu a:hover, ul.meniu div:hover{
+  
+  transition:all 1s liniar;
+  animation: culoaree;
+  animation-duration: 1.5s;
+
+}
+@keyframes culoaree{
+  0%{
+    color: #ffffff;
+
+  }
+  100%{
+    color: #87FF61;
+  }
+}
+
+@keyframes aparitie_meniu_p{
+  0%{
+      opacity:0;
+  } 
+100%{
+    opacity:1;
+  }
+}
+
+
+nav ul.meniu>li:hover>ul{
+  display:block;
+    animation-name: aparitie_meniu;
+    animation-iteration-count:1;
+    animation-duration:0.7s;
+    animation-direction:normal
+    
+    animation-timing-function:linear;
+    transform-origin: 50% 0;
+  }
+
+}
+
+
+
+
+    
+    

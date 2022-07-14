@@ -1,0 +1,66 @@
+#grid-pagina-despre{
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-areas: 
+        "z1 z2"
+        "z3 z4"
+        "z5 z6";}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      width: auto;
+      background-color: rgba(235, 235, 235, 0.55);
+      padding: 40px;
+      position: relative;
+      
+      
+      
+      border-radius: 20px;
+
+
+
+}
+
+#p1{
+    grid-area: z1;
+    margin: 10px;
+}
+
+#t1{
+    grid-area: z2;
+    margin: 10px;
+
+} 
+
+#p2{
+    grid-area: z4;
+    margin: 10px;
+
+}
+
+#t2{
+    grid-area: z3;
+    margin: 10px;
+
+}
+
+#p3{
+    grid-area: z5;
+    margin: 10px;
+
+}
+
+#t3{
+    grid-area: z6;
+    margin: 10px;
+
+}
+
+h2{
+    font-style: italic;
+    color: var(--dark-beige);
+    font-family: 'Fredoka One';
+    font-size: 24px;
+}

@@ -1,0 +1,440 @@
+
+#tit{
+    display: flex;
+    border-radius: 2rem;
+    /* box-shadow: 0px 0px 0.8rem 0.3rem grey;
+    border: solid 1px;
+    border-color: rgb(0, 0, 0);
+    overflow: hidden; */
+    justify-content: left;
+}
+#titlu{
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-family: "Miss Lankfort"; src: url("//db.onlinewebfonts.com/t/a4429743aa06b484202ea792d3f2a8b1.eot"); src: url("//db.onlinewebfonts.com/t/a4429743aa06b484202ea792d3f2a8b1.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/a4429743aa06b484202ea792d3f2a8b1.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/a4429743aa06b484202ea792d3f2a8b1.woff") format("woff"), url("//db.onlinewebfonts.com/t/a4429743aa06b484202ea792d3f2a8b1.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/a4429743aa06b484202ea792d3f2a8b1.svg#Miss Lankfort") format("svg");
+    font-size: 60px;
+    background-color: var(--color4);
+    color: var(--color1);
+    box-shadow: 0px 0px 0.8rem 0.8rem var(--color4);
+    
+    border-radius: 15%;
+    overflow: hidden;
+     /* display: flex; 
+     flex-wrap: wrap;
+    border: #F5F5F5;
+    background-color: #F5F5F5; */
+}
+
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 1;
+    transition: opacity 0.3s;
+  }
+  
+  .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+
+
+footer{
+}
+#link-top{
+  position:fixed;
+  bottom:0.3em;
+  opacity:0.5;
+  left:0.3em;
+  width:3rem;
+  box-sizing: border-box;
+  height:3rem;
+  line-height:3rem;
+  text-align:center;
+  border:1px solid grey;
+  border-radius:0%;
+  background: rgb(220,220,220);
+  transform: rotate(45deg);
+  
+}
+#link-top:hover{
+  opacity:1;
+}
+#triunghi{
+    height:0px;
+    width:0;
+    display:inline-block;
+    border-bottom:1.5rem solid grey;
+    border-left:1rem solid transparent;
+    border-right:1rem solid transparent;
+    vertical-align: top;
+    transform: translateY(20%) rotate(315deg);
+    margin-right: 12px;
+    -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+
+
+
+
+
+
+
+#grid-pagina{
+    display:grid;
+    /* harta gridului; din harta rezulta 3 coloane*/
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "welcome   welcome  welcome   welcome" 
+                         "tabel     tabel  anunturi anunturi"
+                         "tabel     tabel   orar    orar"
+                         "fig1     produse   produse    fig2"
+                         "index-intrebari     index-intrebari   index-intrebari    index-intrebari";
+    padding:var(--padding-intern);
+
+    /*spatiu intre celulele de grid*/
+    grid-gap:2rem;
+    border: 10px dotted var(--culoare-text)
+}
+
+#grid-pagina>section{
+    /*outline:1px solid orange;*/
+    border:5px ridge black;
+    border-style: ridge;
+    padding:1rem;
+    background: rgb(253, 255, 253, 0.6);
+}
+#grid-pagina>figure{
+    width:100%;
+}
+td{
+    padding: 15px;
+}
+table{
+    border: 3px solid black;
+    border-style: double;
+
+}
+tr:hover {
+    animation-name: anborder;
+    animation-duration: 0.5s;
+    
+  }
+@keyframes anborder {
+    0%{
+        
+       outline: 1.5px solid black;
+    }
+    50%{
+        outline: 3px solid black;
+    }
+    100%{
+        outline: 5px solid black;
+    }
+}  
+
+tbody tr:nth-child(even){
+    background-color: rgba(82, 81, 80, 0.4);
+    border: 1px solid black;
+}
+tbody th:nth-child(even),td:nth-child(even){
+    background-color: rgba(247, 247, 247, 0.4);
+    border-color: white;
+    border-width: 1px;
+}
+tbody tr:nth-child(even){
+    border-color: aqua;
+    border-width: 1px;
+}
+tbody tr:nth-child(odd){
+    border-color: beige;
+    border-width: 1px;
+}
+
+
+@media screen and (max-width: 700px){
+    table{
+        display: flex;
+        overflow: scroll;
+        width: 90%;
+        max-width: 550px;
+        margin: 0 auto;
+        padding: 2em;
+        border: 2px solid #cccccc;
+    }
+
+    table::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        background-color: #F5F5F5;
+      }
+      table::-webkit-scrollbar {
+        width: 5px;
+        background-color: #F5F5F5;
+      }
+      table::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+        background-color: #666666;
+      }
+
+    
+
+}
+
+figure{
+    margin:0;
+    padding:0;
+}
+figure img{
+    width:100%;
+}
+ #tabel{
+     grid-area:tabel;
+ }
+#welcome{
+    
+    grid-area: welcome;
+}
+#promotii{
+    grid-area: promotii;
+}
+#anunturi{
+    grid-area: anunturi;
+}
+#orar{
+    grid-area: orar;
+}
+ 
+#fig1{
+    grid-area: fig1;
+}
+#fig2{
+    grid-area: fig2;
+}
+
+#produse{
+    grid-area: produse;
+}
+#index-intrebari{
+    grid-area: index-intrebari;
+}
+
+figcaption{
+    text-align:center;
+}
+
+
+
+
+
+
+
+ 
+@media screen and (max-width: 700px) {
+    div.grid-pagina {
+        font-size: 30px;
+    }
+}
+@media screen and (min-width: 701px) and (max-width: 900px) {
+    div.grid-pagina {
+        font-size: 32px;
+    }
+}
+@media screen and (min-width: 901px) {
+    div.grid-pagina {
+        font-size: 34px;
+    }
+}
+@media only screen and (max-width: 700px) {
+    /** {
+        /CSS transitions/
+		-o-transition-property: none !important;
+		-moz-transition-property: none !important;
+		-ms-transition-property: none !important;
+		-webkit-transition-property: none !important;
+		transition-property: none !important;
+		/CSS transforms/
+		-o-transform: none !important;
+		-moz-transform: none !important;
+		-ms-transform: none !important;
+		-webkit-transform: none !important;
+		transform: none !important;
+		/CSS animations/
+		-webkit-animation: none !important;
+		-moz-animation: none !important;
+		-o-animation: none !important;
+		-ms-animation: none !important;
+		animation: none !important;
+    }*/
+    #grid-pagina {
+        display: block;
+        font-size: smaller;
+    }
+    #grid-pagina>:nth-child(1){ grid-area: welcome; border: none; background-color: initial;}
+    #grid-pagina>:nth-child(2){ grid-area: tabel; border: none; background-color: initial;}
+    #grid-pagina>:nth-child(3){ grid-area: anunturi; border: none; background-color: initial;}
+    #grid-pagina>:nth-child(4){ grid-area: orar; border: none; background-color: initial;}
+    #grid-pagina>:nth-child(5){ grid-area: fig1; border: none; background-color: initial;}
+    #grid-pagina>:nth-child(6){ grid-area: produse; border: none; background-color: initial;}
+    #grid-pagina>:nth-child(7){ grid-area: fig2; border: none; background-color: initial;}
+    #grid-pagina>:nth-child(8){ grid-area: index-intrebari; border: none; background-color: initial;}
+    
+}
+@media only screen and (min-width: 501px) and (max-width: 900px) {
+    #grid-pagina {
+        font-size: smaller;
+        display: grid;
+        
+        grid-template-areas: "welcome tabel"
+                             "anunturi orar"
+                             "fig1 produse"
+                             "fig2 index-intrebari"
+    }
+    #grid-pagina>:nth-child(1){ grid-area: welcome; border: 1px dotted black; background-color: rgb(253, 255, 253, 0.6); }
+    #grid-pagina>:nth-child(2){ grid-area: tabel; border: 1px dotted black; background-color: rgb(253, 255, 253, 0.6);}
+    #grid-pagina>:nth-child(3){ grid-area: anunturi; border: 1px dotted black; background-color: rgb(253, 255, 253, 0.6);}
+    #grid-pagina>:nth-child(4){ grid-area: orar; border: 1px dotted black; background-color: rgb(253, 255, 253, 0.6);}
+    #grid-pagina>:nth-child(5){ grid-area: fig1; border: 1px dotted black; background-color: rgb(253, 255, 253, 0.6);}
+    #grid-pagina>:nth-child(6){ grid-area: produse; border: 1px dotted black; background-color: rgb(253, 255, 253, 0.6);}
+    #grid-pagina>:nth-child(7){ grid-area: fig2; border: 1px dotted black; background-color: rgb(253, 255, 253, 0.6);}
+    #grid-pagina>:nth-child(8){ grid-area: index-intrebari; border: 1px dotted black; background-color: rgb(253, 255, 253, 0.6);}
+}
+
+
+
+
+
+
+
+
+
+
+
+body{
+    margin-top:0;
+    margin-bottom:0;
+    --body-padding:3rem;
+
+    --padding-intern:4%;
+    color:var(--cl-text);
+    /*am adaugat doua imagini de background separandu-le cu virgula*/
+    background-image:var(--gradient-body), var(--imag-body-backgr);
+    background-repeat: no-repeat;
+
+    /* background-ul va ramane fix cand dam scroll*/
+    background-attachment: fixed;
+
+    /*imaginea de background sa acopere tot containerul*/
+    background-size: cover;
+    padding-left:var(--body-padding);
+    padding-right:var(--body-padding);
+    padding-top:0;
+    padding-bottom:0;
+
+    /*nu permite body-ului sa se micsoreze mai mult de atat
+    deoarece pagina nu ar mai putea fi parcursa
+    trebuie mereu setata o latime minima pentru pagina
+    pentru a nu risca sa avem afisat cate un singur cuvant pe rand...*/
+    min-width:330px;/*latimea minima trebuie sa fie mai mica decat orice latime de dispozitiv pentru a nu avea scroll orizontal*/
+}
+
+
+
+h1{
+    font-size: 3rem;/* de 3 ori mai mare decat dimensiunea de font a html-ului*/
+    text-shadow:0px 0px 1px black,0px 0px 2px black, 0px 0px 4px white,0px 0px 4px white,0px 0px 4px white;
+}
+
+
+
+main{
+    --main-border:1px solid grey;
+    background:var(--cl-light-t);
+    
+    border-left:var(--main-border);
+    border-right:var(--main-border);
+    padding-bottom: 2rem;
+    
+}
+
+h1>span{
+	font-family: 'Dancing Script', cursive;
+}
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+html{
+    font-size:16px;
+}
+
+body{
+    --body-padding:1.5rem;
+    margin:0;
+}
+
+
+main{
+    --padd-main:1rem;
+    padding-left:var(--padd-main);
+    padding-right:var(--padd-main);
+}
+
+
+
+
+
+
+
+
+body{
+    --body-padding:0px;
+    
+}
+
+
+section{
+    margin-top:1rem;
+}
+

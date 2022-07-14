@@ -1,0 +1,30 @@
+#grad{
+  
+    height: 200px;
+    background-color: rgb(142, 236, 142); /* For browsers that do not support gradients */
+    background-image: linear-gradient(rgb(229, 246, 225), rgb(31, 42, 38));
+    
+  } 
+  .nume{
+      text-align: center;
+
+  }
+
+  #art-produs{
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      width: auto;
+      background: #ecedef;
+      padding: 40px;
+      position: relative;
+      
+      
+      
+      border-radius: 20px;
+    }  
+    .coloane{
+        display: flex; 
+        position: relative;
+    }
+

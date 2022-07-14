@@ -1,0 +1,52 @@
+@keyframes cookie {
+  0%{
+    opacity: 0;
+    transform: scale(0, 0);
+  }  
+  50%{
+    opacity: 0.5;
+    transform: scale(0, 1 )
+  }
+  100%{
+    opacity: 0.75;
+    transform: scale(0, 2);
+  }
+    
+}
+#banner{
+    animation-name: cookie;
+
+    display: block;
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    right: 0;
+    background-color: rgba(108, 125, 108, 0.75);
+    opacity: 0.9;
+    color: white;
+    padding: 0 32px;
+    z-index: 200;
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 0 -2px 16px grey;
+    text-align: center;
+}
+
+#banner.active{
+    animation-name: cookie;
+
+    bottom: 0;
+    
+}
+
+#banner p{
+    color: white;
+}
+
+#ok_cookies{
+    background-color:rgb(92, 145, 92) ;
+    border: 0;
+    color: white;
+    padding: 12px 48px;
+    cursor: pointer;
+}
